@@ -1,0 +1,4 @@
+#!/bin/sh
+
+$HOME/pmd-bin-7.0.0-rc2/bin/pmd check -f text -r informe.txt -d app/src/main -R rulesets/java/quickstart.xml
+./gradlew assembleDebug
