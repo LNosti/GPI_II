@@ -1,0 +1,13 @@
+#!/bin/sh
+#Mifare Classic Tool
+cd ./Mifare\ Classic\ Tool
+export ANDROID_HOME="/home/alumno/Escritorio/android_sdk/"
+$HOME/pmd-bin-7.0.0-rc2/bin/pmd check -f text -r informe.txt -d app/src/main -R rulesets/java/quickstart.xml
+./gradlew assembleDebug
+
+#easybuggy
+cd ../easybuggy
+$HOME/pmd-bin-7.0.0-rc2/bin/pmd check -f text -r informe.txt -d src/main -R rulesets/java/quickstart.xml
+mvn compile
+mvn package
+mvn clean install
