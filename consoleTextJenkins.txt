@@ -1,0 +1,105 @@
+Lanzada por el usuario admin
+Running as SYSTEM
+Ejecutando.en el espacio de trabajo /opt/tomcat/.jenkins/workspace/workflow
+The recommended git tool is: NONE
+using credential b28db397-7bfe-4ff2-9245-7c712749195e
+ > /usr/bin/git rev-parse --resolve-git-dir /opt/tomcat/.jenkins/workspace/workflow/.git # timeout=10
+Fetching changes from the remote Git repository
+ > /usr/bin/git config remote.origin.url https://github.com/LNosti/GPI_II.git # timeout=10
+Fetching upstream changes from https://github.com/LNosti/GPI_II.git
+ > /usr/bin/git --version # timeout=10
+ > git --version # 'git version 2.25.1'
+using GIT_ASKPASS to set credentials 
+ > /usr/bin/git fetch --tags --force --progress -- https://github.com/LNosti/GPI_II.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > /usr/bin/git rev-parse refs/remotes/origin/easy_buggy^{commit} # timeout=10
+Checking out Revision b4556ec4e72c5ff57f70d9839d75767c42344669 (refs/remotes/origin/easy_buggy)
+ > /usr/bin/git config core.sparsecheckout # timeout=10
+ > /usr/bin/git checkout -f b4556ec4e72c5ff57f70d9839d75767c42344669 # timeout=10
+Commit message: "fix: cambios de localizaciones en pom.xml"
+ > /usr/bin/git rev-list --no-walk b4556ec4e72c5ff57f70d9839d75767c42344669 # timeout=10
+[workflow] $ /bin/sh -xe /opt/tomcat/temp/jenkins8125374390088971107.sh
++ export ANDROID_HOME=/home/alumno/Escritorio/android_sdk/
++ pwd
+/opt/tomcat/.jenkins/workspace/workflow
++ cd ./easybuggy
++ ls
+catalina.policy
+demo_eb_ja.gif
+Dockerfile
+informe.txt
+pom.xml
+README.jp.md
+README.md
+src
+target
++ JAVA_OPTS=-Djava.awt.headless=true -Djava.security.egd=file:/dev/./urandom -Djdk.tls.ephemeralDHKeySize=2048 -Djava.protocol.handler.pkgs=org.apache.catalina.webresources -Dorg.apache.catalina.security.SecurityListener.UMASK=0027  -Djava.security.egd=file:/dev/./urandom
+[workflow] $ /opt/tomcat/.jenkins/tools/hudson.tasks.Maven_MavenInstallation/Maven/bin/mvn compile package
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< org.t246osslab.easybuggy:easybuggy >-----------------
+[INFO] Building easybuggy 1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:1.1.1:enforce (enforce-java) @ easybuggy ---
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ easybuggy ---
+[INFO] skip non existing resourceDirectory /opt/tomcat/.jenkins/workspace/workflow/src/main/resources
+[INFO] 
+[INFO] --- compiler:2.3.2:compile (default-compile) @ easybuggy ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- enforcer:1.1.1:enforce (enforce-java) @ easybuggy ---
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ easybuggy ---
+[INFO] skip non existing resourceDirectory /opt/tomcat/.jenkins/workspace/workflow/src/main/resources
+[INFO] 
+[INFO] --- compiler:2.3.2:compile (default-compile) @ easybuggy ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- antrun:1.3:run (create-empty-directory-and-english-properties) @ easybuggy ---
+[INFO] Executing tasks
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ easybuggy ---
+[INFO] skip non existing resourceDirectory /opt/tomcat/.jenkins/workspace/workflow/src/test/resources
+[INFO] 
+[INFO] --- compiler:2.3.2:testCompile (default-testCompile) @ easybuggy ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.0.0:test (default-test) @ easybuggy ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- war:2.6:war (default-war) @ easybuggy ---
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.thoughtworks.xstream.converters.extended.DynamicProxyConverter (file:/opt/tomcat/.m2/repository/com/thoughtworks/xstream/xstream/1.4.4/xstream-1.4.4.jar) to field java.lang.reflect.Proxy.h
+WARNING: Please consider reporting this to the maintainers of com.thoughtworks.xstream.converters.extended.DynamicProxyConverter
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+[INFO] Packaging webapp
+[INFO] Assembling webapp [easybuggy] in [/opt/tomcat/.jenkins/workspace/workflow/target/easybuggy-1-SNAPSHOT]
+[INFO] Processing war project
+[INFO] Webapp assembled in [180 msecs]
+[INFO] Building war: /opt/tomcat/.jenkins/workspace/workflow/target/ROOT.war
+[INFO] 
+[INFO] --- tomcat7:2.1:exec-war-only (tomcat-run) @ easybuggy ---
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.289 s
+[INFO] Finished at: 2023-05-23T11:42:57+02:00
+[INFO] ------------------------------------------------------------------------
+[WARNING] 
+[WARNING] Plugin validation issues were detected in 6 plugin(s)
+[WARNING] 
+[WARNING]  * org.apache.maven.plugins:maven-war-plugin:2.6
+[WARNING]  * org.apache.maven.plugins:maven-antrun-plugin:1.3
+[WARNING]  * org.apache.maven.plugins:maven-enforcer-plugin:1.1.1
+[WARNING]  * org.apache.tomcat.maven:tomcat7-maven-plugin:2.1
+[WARNING]  * org.apache.maven.plugins:maven-resources-plugin:3.3.0
+[WARNING]  * org.apache.maven.plugins:maven-compiler-plugin:2.3.2
+[WARNING] 
+[WARNING] For more or less details, use 'maven.plugin.validation' property with one of the values (case insensitive): [BRIEF, DEFAULT, VERBOSE]
+[WARNING] 
+Finished: SUCCESS
