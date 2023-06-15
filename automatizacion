@@ -11,3 +11,8 @@ $HOME/pmd-bin-7.0.0-rc2/bin/pmd check -f text -r informe.txt -d src/main -R rule
 mvn compile
 mvn package
 mvn clean install
+
+#NFC4PC
+cd ../NFC4PC
+./gradlew clean jar
+java -jar build/libs/nfc4pc-230103.jar
